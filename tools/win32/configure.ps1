@@ -29,10 +29,10 @@ if (-not (Test-Path env:BOOST_LIBRARYDIR)) {
   $env:BOOST_LIBRARYDIR = 'c:\local\boost_1_69_0-Win64\lib64-msvc-14.1'
 }
 if (-not (Test-Path env:FLEX_BINARY)) {
-  $env:FLEX_BINARY = 'C:\ProgramData\chocolatey\bin\win_flex.exe'
+  $env:FLEX_BINARY = 'C:\ProgramData\chocolatey\lib\winflexbison\tools\win_flex.exe'
 }
 if (-not (Test-Path env:BISON_BINARY)) {
-  $env:BISON_BINARY = 'C:\ProgramData\chocolatey\bin\win_bison.exe'
+  $env:BISON_BINARY = 'C:\ProgramData\chocolatey\lib\winflexbison\tools\win_bison.exe'
 }
 
 $sourcePath = Get-Location
