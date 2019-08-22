@@ -1788,8 +1788,8 @@ You need to specify the previously installed component paths:
 
 Variable              | Value                                                                | Description
 ----------------------|----------------------------------------------------------------------|-------------------------------------------------------
-`BOOST_ROOT`          | `C:\boost_1_69_0`                                                    | Root path where you've extracted and compiled Boost.
-`BOOST_LIBRARYDIR`    | `C:\boost_1_69_0\stage`                                              | Path to the static compiled Boost libraries, directory must contain `lib`.
+`BOOST_ROOT`          | `C:\boost_1_70_0`                                                    | Root path where you've extracted and compiled Boost.
+`BOOST_LIBRARYDIR`    | `C:\boost_1_70_0\stage`                                              | Path to the static compiled Boost libraries, directory must contain `lib`.
 `BISON_BINARY`        | `C:\ProgramData\chocolatey\lib\winflexbison\tools\win_bison.exe`     | Path to the Bison executable.
 `FLEX_BINARY`         | `C:\ProgramData\chocolatey\lib\winflexbison\tools\win_flex.exe`      | Path to the Flex executable.
 `ICINGA2_WITH_MYSQL`  | OFF                                                                  | Requires extra setup for MySQL if set to `ON`. Not supported for client setups.
@@ -1810,7 +1810,7 @@ cd %HOMEPATH%\source\repos
 
 $env:ICINGA2_BUILDPATH='debug'
 $env:CMAKE_BUILD_TYPE='Debug'
-$env:OPENSSL_ROOT_DIR='C:\OpenSSL-Win64'
+$env:OPENSSL_ROOT_DIR='C:\Program Files\OpenSSL-Win64'
 $env:BOOST_ROOT='C:\boost_1_70_0'
 $env:BOOST_LIBRARYDIR='C:\boost_1_70_0\stage'
 $env:BISON_BINARY='C:\ProgramData\chocolatey\lib\winflexbison\tools\win_bison.exe'

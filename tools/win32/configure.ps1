@@ -3,6 +3,12 @@ Set-PsDebug -Trace 1
 if (-not (Test-Path env:ICINGA2_BUILDPATH)) {
   $env:ICINGA2_BUILDPATH = '.\build'
 }
+if (-not (Test-Path env:ICINGA2_WITH_MYSQL)) {
+  $env:ICINGA2_WITH_MYSQL = 'OFF'
+}
+if (-not (Test-Path env:ICINGA2_WITH_PGSQL)) {
+  $env:ICINGA2_WITH_PGSQL = 'OFF'
+}
 
 if (-not (Test-Path env:CMAKE_BUILD_TYPE)) {
   $env:CMAKE_BUILD_TYPE = 'RelWithDebInfo'
@@ -49,7 +55,8 @@ if (Test-Path CMakeCache.txt) {
 & cmake.exe "$sourcePath" `
   -DCMAKE_BUILD_TYPE="$env:CMAKE_BUILD_TYPE" `
   -G "$env:CMAKE_GENERATOR" -DCPACK_GENERATOR=WIX `
-  -DICINGA2_WITH_MYSQL=OFF -DICINGA2_WITH_PGSQL=OFF `
+  -DICINGA2_WITH_MYSQL="$env:ICINGA2_WITH_MYSQL" `
+  -DICINGA2_WITH_PGSQL="$env:ICINGA2_WITH_PGSQL" `
   -DICINGA2_WITH_LIVESTATUS=OFF -DICINGA2_WITH_COMPAT=OFF `
   -DOPENSSL_ROOT_DIR="$env:OPENSSL_ROOT_DIR" `
   -DBOOST_LIBRARYDIR="$env:BOOST_LIBRARYDIR" `
